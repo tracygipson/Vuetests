@@ -1,13 +1,23 @@
+Vue.component('todo-item',{
+    template:'<li>This is a todo</li>'
+})
+
 var app = new Vue({
 
     el:'#app',
     data: {
         message: "Hello Worldy",
         seen: true,
+    },
+    methods:{
+        reversemsg: function(){
+            this.message = this.message.split('').reverse().join('')
+        }
     }
 });
+
 //app.seen = false;
-app.message ="Ihave changed the data!";
+// app.message ="Ihave changed the data!";
 var tod = new Vue({
 
     el:'#tod',
@@ -21,3 +31,4 @@ var tod = new Vue({
 });
 
 tod.todos.push({text:"later"})
+tod.todos.push({text:"later2"})
